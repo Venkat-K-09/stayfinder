@@ -30,9 +30,9 @@ app.use('/api/bookings', bookingRoutes)
 
 // Serve React build in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/stack-project/dist')))
+  app.use(express.static(path.join(__dirname, '../client/dist')))
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/stack-project/dist', 'index.html'))
+    res.sendFile(path.resolve(__dirname, '../client/dist', 'index.html'))
   })
 } else {
   app.get('/', (req, res) => res.send('StayFinder API running ✓'))
